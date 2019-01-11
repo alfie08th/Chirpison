@@ -2,27 +2,29 @@
 <table class="ui selectable inverted table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Birthday</th>
-      <th class="right aligned">Education</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>User Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Salary</th>
+      <th class="Left aligned">Education</th>
+      <th>Edit</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>John</td>
-      <td>12/13/1995</td>
-      <td class="right aligned">Bachelors</td>
-    </tr>
-    <tr>
-      <td>Jamie</td>
-      <td>02/04/1965</td>
-      <td class="right aligned">HS</td>
-    </tr>
-    <tr>
-      <td>Jill</td>
-      <td>01/03/1985</td>
-      <td class="right aligned">Associates</td>
-    </tr>
+    <% @instructors.each do|instructor| %>
+        <tr>
+            <td><%=instructor.f_name %></td>
+            <td><%=instructor.l_name %></td>
+            <td><%=instructor.username %></td>
+            <td><%=instructor.email %></td>
+            <td><%=instructor.age %></td>
+            <td><%=instructor.salary %></td>
+            <td><%=instructor.education %></td>
+            <td><a href="/instructor/<%= instructor.id %>">Show</a></td>
+        </tr>
+    <% end %>
   </tbody>
 </table>
 <div id="instructor_layout">

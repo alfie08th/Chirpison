@@ -6,7 +6,7 @@ class CreateInstructors < ActiveRecord::Migration[5.2]
       t.string :l_name
       t.string :email
       t.string :password
-      t.integer :salary
+      t.string :salary
       t.integer :age
       t.string :education
 

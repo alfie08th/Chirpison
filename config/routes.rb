@@ -46,7 +46,7 @@ Rails.application.routes.draw do
 #   get 'posts/update'
 #   get 'posts/destroy'
 
-root to: 'homepages#index'
+root to: 'users#index'
 # resources :posts
 post '/users' => 'users#create'
 post '/posts' => 'posts#create'
@@ -57,6 +57,14 @@ get '/instructor' => 'instructors#index'
 get '/student' => 'students#index'
 # get '/student' => 'posts#index'
 get '/cohort' => 'cohorts#index'
+
+get '/dashboard' => 'homepages#index'
+
+get '/course' => 'courses#index'
+
+get '/instructor/:id' => 'instructors#show'
+get '/student/:id' => 'students#show'
+get '/course/:id' => 'courses#show'
 
 # get '/post/:id' => 'posts#destroy'
 

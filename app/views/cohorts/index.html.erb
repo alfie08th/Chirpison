@@ -1,11 +1,16 @@
-<div id="cohort_big_div">
-    <h1>Cohorts#index</h1>
-    <p>Custom range slider:</p>
-    <div class="slidecontainer">
-        <input type="range" min="1" max="100" value="50" class="slider slider2 slider3" id="myRange">
-        <input type="range" min="1" max="100" value="50" class="slider slider2 slider3" id="myRange">
-        <input type="range" min="1" max="100" value="50" class="slider slider2 slider3" id="myRange">
-        <input type="range" min="1" max="100" value="50" class="slider slider2 slider3" id="myRange">
-        <input type="range" min="1" max="100" value="50" class="slider slider2 slider3" id="myRange">
 
+
+<div class="center3">
+  <% @cohorts.each do |c| %>
+    <div class="ui card three_column">
+      <a class="image" href="#">
+        <%= image_tag "https://tse4.mm.bing.net/th?id=OIP.2Y7fiAWyuhg-2Yj1H2r9CwHaHp&pid=15.1&P=0&w=300&h=300" %>
+      </a>
+      <div class="content cohort_column_content">
+        <div class="meta">
+          <a><%= c.students.count %> students atended</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>

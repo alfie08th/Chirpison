@@ -1,77 +1,46 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<%= form_for @new_post do |f| %>
+    <%= f.text_area :body %>
+    <select name="user_id">
+      <%User.all.each do |user| %>
+        <option value="<%=user.id %>">
+            <%= user.username %>
+        </option>
+      <% end %>
+    </select>
+    <br>
+    <%= f.submit "create" %>
+<% end %>
 
-Things you may want to cover:
+    <div class="w3-card-4 w3-dark-grey instructor_card">
+        <div class="w3-container w3-center instructor_center_card">
+            <h3 id="instructor_username"><%= @instructor.username %></h3>
+            <img id="instructor_image" src="https://tse4.mm.bing.net/th?id=OIP.2Y7fiAWyuhg-2Yj1H2r9CwHaHp&pid=15.1&P=0&w=300&h=300" alt="Avatar">
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-# <form action="post"  method="POST">
-
-#  <input name="title" type="text">
-#  <textarea name="body"></textarea>
-#  <input name="user name" type="text">
-# </form>
-
-# <div>
-#     <% @posts.each do |post| %>
-#     <h2> <%=post.title%></h2>
-#     <a href="/posts/<%= post.id %>">DELETE</a>
-#     <% end %>
-
-# </div>
-
-
-    # <nav id="my_nav_bar">
-    #     <div id="nav_one"><div id="about_div"><a id="about" href="#">About</a></div></div>
-    #     <div id="nav_two"><div id="contact_div"><a id="contact" href="#">Contact</a></div></div>
-    #     <div id="nav_three"><div id="home_div"><a id="home" href="#">Home</a></div></div>
-    # </nav>
-
-
-<form class="ui form" method="POST" action="/posts">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <% if current_user %>
-        <div class="field">
-            <label>Add Title</label>
-            <input name="title" type="text">
+            <div class="w3-section">
+                <button class="w3-button w3-green">Call</button>
+                <button class="w3-button w3-red">Text</button>
+            </div>
         </div>
-        <div class="field">
-            <label>Add Content</label>
-            <textarea id="user_blog_paragraph"required type="text" name="body" cols="50" rows="10"></textarea>
-        </div>
-        <div class="field">
-            <label>Author</label>
-            <input name="author" type="text">
-        </div>
-        <button class="ui button"  type="submit"> Submit </button>
-    < % end %>
-</form>
+    </div>
 
-<div id="user_post">
-    <% @posts.each do |post| %>
-        <h2 class="post_title"><%=post.title%></h2>
-        <p class="post_body"><%= post.body %> </p>
-        <% if current_user && current_user.id==post.user.id %>
-            <a href="/post/<%= post.user_id %>">Delete</a>
-        <% end %>
-        <p class="post_creator"><b>Post by <%= post.user.username %></b> </p>
-    <%end%>
+    <div id="cohort_big_div">
+    <h1>Cohorts#index</h1>
+    <p>Custom range slider:</p>
+        <div class="columns">
+            <% @cohorts.each do |cohort| %>
+                <div class="cohort_column">
+                    <img class="background_image" src="https://tse1.mm.bing.net/th?id=OIP.dGcKWEbX6A9GH5dlaQSQ6AHaFU&pid=15.1&P=0&w=219&h=158">
+                    <div class="cohort_image_shadow"></div>
+                    <h4 class="cohort_title"><%= cohort.start_date%></h4>
+                    <h4 class="view_more"><a href="#">View</a></h4>
+                </div>
+            <% end %>
+        </div>
 </div>
+
+
+        <div id="course_edit_button">
+            <button class="ui red button"><i class="far fa-trash-alt"></i></button>
+            <button class="ui twitter button"><i class="fas fa-edit"></i></button>
+        </div>

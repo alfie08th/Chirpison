@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.reverse
+    @new_posts = Post.new
   end
 
   def create
