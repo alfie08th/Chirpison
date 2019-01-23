@@ -44,3 +44,7 @@
             <button class="ui red button"><i class="far fa-trash-alt"></i></button>
             <button class="ui twitter button"><i class="fas fa-edit"></i></button>
         </div>
+
+
+                            <input id="home_search_input" type="text" placeholder="Search...">
+                            <button id="home_search_button" class="button"><i class="search icon"></i></button>

@@ -1,6 +1,6 @@
 #course_big_div{
     width:100%;
-    height:2000px;
+    height:1400px;
     margin:0 auto;
     margin-top:50px;
 
@@ -11,17 +11,20 @@
 .three_course_column{
     width:100%;
     height:250px;
+    margin-bottom:20px;
 }
 .course_column{
-    height:250px;
-    margin-bottom:20px;
+    height:350px;
+    /* margin-bottom:30px; */
     width:33.33%;
     float:left;
-    margin-top:30px;
+    margin-top:50px;
     color:rgba(0,0,0,0.6);
 
 }
 .course_background_image{
+    width:250px;
+    height:250px;
     border-radius:5px;
 }
 .course_title:hover,.course_hours:hover, .course_view_more:hover{
@@ -77,10 +80,9 @@ color:#020006;
 #course_username{
     margin:15px 0px 15px 0px;
 }
-#course_image{
+.course_image{
     width:250px;
     height:250px;
-    padding:50px;
     margin:0px 0px 20px 35px;
     box-shadow: 1px 1px rgba(0,0,0,0.6);
     border-radius:5px;
